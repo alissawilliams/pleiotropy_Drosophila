@@ -1,3 +1,5 @@
+In scripts:
+
 concatenate.py:
 Script to prepare fasta files for PAML
 Uses a folder containing fasta files to be concatenated for use in PAML with option G for codon sequences (codeml with seqtype = 1). Hardcoded for specific folders and header format. Could be modified for different file formats. 
