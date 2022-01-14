@@ -8,6 +8,10 @@ eliminate_dups.py:
 Script to remove species with >1 sequence
 Uses table created by one_to_one.R to read through fasta files and eliminate species with more than one sequence. Assumes that species with more than one sequence only have one sequence in the fasta file. File names are hardcoded. Could be modified for different formats.
 
+extract_mkvalues.R:
+Script for extracting values for MK tests
+Obtains values for McDonald-Kreitman tests. Uses Table S3 from Fraisse et al, 2017 and lists of genes of interest to output 1) a list of genes of interest missing in Table S3 and 2) a table of values for the genes of interest found in Table S3. Again, file names are hard coded. 
+
 extract_seqs4.py:
 Script for constructing original sequence files
 Uses downloaded fasta sequences from FlyBase for each species of interest and a table of ortholog gene IDs (also from FlyBase) to construct sequence files. Also requires a list (text file) of genes of interest. Could be modified for different file formats. Currently, file names are hard coded.
