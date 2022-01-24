@@ -4,6 +4,10 @@ concatenate.py:
 Script to prepare fasta files for PAML
 Uses a folder containing fasta files to be concatenated for use in PAML with option G for codon sequences (codeml with seqtype = 1). Hardcoded for specific folders and header format. Could be modified for different file formats. 
 
+construct_tree.R:
+Script to construct trees for PAML
+Uses the original species tree and drops tips not found in the fasta sequence file for use in codeml runs for individual genes. Hardcoded file names. 
+
 eliminate_dups.py:
 Script to remove species with >1 sequence
 Uses table created by one_to_one.R to read through fasta files and eliminate species with more than one sequence. Assumes that species with more than one sequence only have one sequence in the fasta file. File names are hardcoded. Could be modified for different formats.
