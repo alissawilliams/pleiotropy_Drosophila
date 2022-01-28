@@ -3,7 +3,7 @@ plei = pleiotropic genes
 nonplei/nonpleiotropic = non-pleiotropic immune genes
 devo/developmental = non-pleiotropic developmental genes
 
-CDS_sequences.zip (DO NOT use the unzipped version. It did not upload correctly.):
+CDS_sequences.zip:
 Contains three folders: seqfiles_developmental_genes_edited, seqfiles_nonpleiotropic_genes_edited, and seqfiles_pleiotropic_genes_edited. The folder structure in each of these folders is:
 - not_enough_seqs contains CDSs for genes that had 0 or 1 sequences for the 12 Drosophila species (after removal of species with paralogs)
 - originals contains unaligned, untrimmed CDSs for all genes with at least 2 sequences for the 12 Drosophila species (where each represented species only has one sequence; species with paralogs were removed)
