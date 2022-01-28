@@ -8,7 +8,13 @@ Contains three folders: seqfiles_developmental_genes_edited, seqfiles_nonpleiotr
 - not_enough_seqs contains CDSs for genes that had 0 or 1 sequences for the 12 Drosophila species (after removal of species with paralogs)
 - originals contains unaligned, untrimmed CDSs for all genes with at least 2 sequences for the 12 Drosophila species (where each represented species only has one sequence; species with paralogs were removed)
 - trimmed contains the final sequence files used in concatenations and individual gene runs. Within trimmed is individual_trees, which contains the .nwk format trees used to run codeml for each individual gene. 
-- trimmed_originals contains the final sequence files (same as above) but with the original gene IDs instead of just species names like the ones above. 
+- trimmed_originals contains the final sequence files (same as above) but with the original gene IDs instead of just species names like the ones above.
+
+codeml_output_individual_genes.zip:
+Contains model 0 output (model = 0, NSsites = 0) for each individual gene, i.e. where each gene is assigned one dN/dS value for the entire tree. The genes are separated into their categories in the folders devo_codeml_output, nonplei_codeml_output, and plei_codeml_output. In each of those respective folders, there is:
+- grepfile.txt: has results of grep command used to pull out omega value from each file
+- [category]_dnds_values.txt: table with two columns, gene ID and omega value for that gene
+- [category]_nodnds_values.txt: list of genes for which this codeml run did not produce an omega value. 
 
 In scripts:
 
