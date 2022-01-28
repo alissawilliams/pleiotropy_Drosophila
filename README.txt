@@ -3,6 +3,8 @@ plei = pleiotropic genes
 nonplei/nonpleiotropic = non-pleiotropic immune genes
 devo/developmental = non-pleiotropic developmental genes
 
+Note: each of the categories above is referred to as a gene class, gene category, class, or category. 
+
 CDS_sequences.zip:
 Contains three folders: seqfiles_developmental_genes_edited, seqfiles_nonpleiotropic_genes_edited, and seqfiles_pleiotropic_genes_edited. The folder structure in each of these folders is:
 - not_enough_seqs contains CDSs for genes that had 0 or 1 sequences for the 12 Drosophila species (after removal of species with paralogs)
@@ -11,10 +13,24 @@ Contains three folders: seqfiles_developmental_genes_edited, seqfiles_nonpleiotr
 - trimmed_originals contains the final sequence files (same as above) but with the original gene IDs instead of just species names like the ones above.
 
 codeml_output_individual_genes.zip:
-Contains model 0 output (model = 0, NSsites = 0) for each individual gene, i.e. where each gene is assigned one dN/dS value for the entire tree. The genes are separated into their categories in the folders devo_codeml_output, nonplei_codeml_output, and plei_codeml_output. In each of those respective folders, there is:
+Contains model 0 output (model = 0, NSsites = 0) for each individual gene, i.e. where each gene is assigned one dN/dS value for the entire tree. The genes are separated into their categories in the folders devo_codeml_output, nonplei_codeml_output, and plei_codeml_output. In each of those respective folders, you'll find:
+- a bunch of files in the format aligned_edited_FBgnxxxxxxx.model0.site.result.txt. These are the codeml output files. 
 - grepfile.txt: has results of grep command used to pull out omega value from each file
 - [category]_dnds_values.txt: table with two columns, gene ID and omega value for that gene
 - [category]_nodnds_values.txt: list of genes for which this codeml run did not produce an omega value. 
+
+individual_genes_fulltable_codeml_model0.txt: full table of codeml model 0 results for all individual genes. Made using the [category]_dnds_values.txt tables described above. 
+
+In concatenations:
+
+codeml_plei_model0.ctl and codeml_plei_models7and8.ctl: examples of control files used in PAML codeml for concatenations
+
+Drosophila_species_tree.nwk: known species tree of all 12 Drosophila species on FlyBase. Used as the constraint tree in the PAML runs on concatenated alignments. Also used as the basis for constructing trees for each individual gene (see CDS_sequences.zip above). 
+
+Then there are three folders: devo, nonplei, and plei. In each:
+- concat_[class]_genes_noG.fas: concatenated alignment used in PAML codeml run
+- concat_[class]_genes_paml_noG_NSsites0.out: output of model 0 run (model = 0, NSsites = 0)
+- concat_[class]_genes_paml_noG.out: output of model 7 and model 8, which were performed using the same run (model = 0, NSsites = 7 8)
 
 In scripts:
 
