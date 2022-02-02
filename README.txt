@@ -44,6 +44,9 @@ Modified version of File S5 from Fraisse et al, 2017 that includes only the gene
 [class]_missing_genes_MK_table.txt:
 List of genes from particular class concatenation that were not found in File S5 from Fraisse et al, 2017. 
 
+fullMKtable.txt:
+Full table of MK data from File S5 (Fraisse et al, 2017) for all genes of interest found in the concatenation and File S5. MAde using the [class]_genes_mk_table.txt table described above.
+
 In scripts:
 
 concatenate.py:
