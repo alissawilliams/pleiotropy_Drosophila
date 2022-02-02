@@ -67,7 +67,7 @@ Uses table created by one_to_one.R to read through fasta files and eliminate spe
 
 extract_mkvalues.R:
 Script for extracting values for MK tests
-Obtains values for McDonald-Kreitman tests. Uses Table S3 from Fraisse et al, 2017 and lists of genes of interest to output 1) a list of genes of interest missing in Table S3 and 2) a table of values for the genes of interest found in Table S3. Again, file names are hard coded. 
+Obtains values for McDonald-Kreitman tests. Uses File S3 from Fraisse et al, 2017 and lists of genes of interest to output 1) a list of genes of interest missing in Table S3 and 2) a table of values for the genes of interest found in File S3. Again, file names are hard coded. An almost identical version of this script was used to extract entire table rows for genes of interest from File S5 (also Fraisse et al, 2017).
 
 extract_seqs4.py:
 Script for constructing original sequence files
