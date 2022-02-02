@@ -27,11 +27,22 @@ codeml_plei_model0.ctl and codeml_plei_models7and8.ctl: examples of control file
 
 Drosophila_species_tree.nwk: known species tree of all 12 Drosophila species on FlyBase. Used as the constraint tree in the PAML runs on concatenated alignments. Also used as the basis for constructing trees for each individual gene (see CDS_sequences.zip above). 
 
+[class]_list_concatenation.txt:
+Lists of the genes in each category that ended up being included in each respective concatenation. 
+
 Then there are three folders: devo, nonplei, and plei. In each:
 - concat_[class]_genes_noG.fas: concatenated alignment used in PAML codeml run
 - concat_[class]_genes_paml_noG_NSsites0.out: output of model 0 run (model = 0, NSsites = 0)
 - concat_[class]_genes_paml_noG.out: output of model 7 and model 8, which were performed using the same run (model = 0, NSsites = 7 8)
 - the devo concatenation was large enough that NSsites7 and NSsites8 are in separate output files (named with same convention as above)
+
+In McDonald-Kreitman:
+
+[class]_genes_mk_vals.txt:
+Modified version of File S5 from Fraisse et al, 2017 that includes only the genes that were included in that particular class's concatenation (note that not all genes in the concatenation were found in these tables; see below). 
+
+[class]_missing_genes_MK_table.txt:
+List of genes from particular class concatenation that were not found in File S5 from Fraisse et al, 2017. 
 
 In scripts:
 
