@@ -21,7 +21,11 @@ Contains model 0 output (model = 0, NSsites = 0) for each individual gene, i.e. 
 
 individual_genes_fulltable_codeml_model0.txt: full table of codeml model 0 results for all individual genes. Made using the [category]_dnds_values.txt tables described above. 
 
-In concatenations:
+sequence_counts.xlsx:
+The first tab shows the number of sequences we started with at the beginning (from Table 1, row 2 in the manuscript). The first sheet then provides data on how many genes remained in each group after removing genes with too few sequences (which happened after removing species with gene duplicates) and then removing genes whose sequence files didn't align. Finally, of those sequence files that aligned, a number is also shown to represent the number of those genes for which NSsites = 0 codeml runs were successful. The numbers under "Sequence files that aligned" represent the concatenations, while the numbers under "Number of genes where model 0 run was successful" represent genes used in the distributions of individual NSsites = 0 dN/dS values. 
+The second tab shows the number of genes found in the two relevant Fraisse et al 2017 files (after starting with the lists of genes that made it into the three concatenations for PAML). 
+
+In concatenations/:
 
 codeml_plei_model0.ctl and codeml_plei_models7and8.ctl: examples of control files used in PAML codeml for concatenations
 
@@ -36,7 +40,7 @@ Then there are three folders: devo, nonplei, and plei. In each:
 - concat_[class]_genes_paml_noG.out: output of model 7 and model 8, which were performed using the same run (model = 0, NSsites = 7 8)
 - the devo concatenation was large enough that NSsites7 and NSsites8 are in separate output files (named with same convention as above)
 
-In McDonald-Kreitman:
+In McDonald-Kreitman/:
 
 [class]_genes_mk_vals.txt:
 Modified version of File S5 from Fraisse et al, 2017 that includes only the genes that were included in that particular class's concatenation (note that not all genes in the concatenation were found in these tables; see below). 
@@ -47,7 +51,7 @@ List of genes from particular class concatenation that were not found in File S5
 fullMKtable.txt:
 Full table of MK data from File S5 (Fraisse et al, 2017) for all genes of interest found in the concatenation and File S5. MAde using the [class]_genes_mk_table.txt table described above.
 
-In scripts:
+In scripts/:
 
 concatenate.py:
 Script to prepare fasta files for PAML
