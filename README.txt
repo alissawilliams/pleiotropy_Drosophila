@@ -31,6 +31,7 @@ Then there are three folders: devo, nonplei, and plei. In each:
 - concat_[class]_genes_noG.fas: concatenated alignment used in PAML codeml run
 - concat_[class]_genes_paml_noG_NSsites0.out: output of model 0 run (model = 0, NSsites = 0)
 - concat_[class]_genes_paml_noG.out: output of model 7 and model 8, which were performed using the same run (model = 0, NSsites = 7 8)
+- the devo concatenation was large enough that NSsites7 and NSsites8 are in separate output files (named with same convention as above)
 
 In scripts:
 
