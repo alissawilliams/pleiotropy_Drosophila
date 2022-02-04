@@ -19,6 +19,9 @@ Contains model 0 output (model = 0, NSsites = 0) for each individual gene, i.e. 
 - [category]_dnds_values.txt: table with two columns, gene ID and omega value for that gene
 - [category]_nodnds_values.txt: list of genes for which this codeml run did not produce an omega value. 
 
+codeml_output_individual_genes_models7and8.zip:
+Contains model 0 output (model = 0, NSsites = 0), model 7 output (model = 0, NSsites = 7), and model 8 output (model = 0, NSsites = 8) for each individual pleiotropic gene. Note that only pleiotropic genes are included. Also note that for consistency, model 0 estimates for individual genes were taken from the files in codeml_output_individual_genes.zip, NOT from these combined runs.
+
 individual_genes_fulltable_codeml_model0.txt: full table of codeml model 0 results for all individual genes. Made using the [category]_dnds_values.txt tables described above. 
 
 sequence_counts.xlsx:
