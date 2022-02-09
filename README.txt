@@ -22,11 +22,15 @@ Contains model 0 output (model = 0, NSsites = 0) for each individual gene, i.e. 
 codeml_output_individual_genes_models7and8.zip:
 Contains model 0 output (model = 0, NSsites = 0), model 7 output (model = 0, NSsites = 7), and model 8 output (model = 0, NSsites = 8) for each individual pleiotropic gene. Note that only pleiotropic genes are included. Also note that for consistency, model 0 estimates for individual genes were taken from the files in codeml_output_individual_genes.zip, NOT from these combined runs.
 
-individual_genes_fulltable_codeml_model0.txt: full table of codeml model 0 results for all individual genes. Made using the [category]_dnds_values.txt tables described above. 
+individual_genes_fulltable_codeml_model0.txt: 
+full table of codeml model 0 results for all individual genes. Made using the [category]_dnds_values.txt tables described above. 
 
 sequence_counts.xlsx:
 The first tab shows the number of sequences we started with at the beginning (from Table 1, row 2 in the manuscript). The first sheet then provides data on how many genes remained in each group after removing genes with too few sequences (which happened after removing species with gene duplicates) and then removing genes whose sequence files didn't align. Finally, of those sequence files that aligned, a number is also shown to represent the number of those genes for which NSsites = 0 codeml runs were successful. The numbers under "Sequence files that aligned" represent the concatenations, while the numbers under "Number of genes where model 0 run was successful" represent genes used in the distributions of individual NSsites = 0 dN/dS values. 
 The second tab shows the number of genes found in the two relevant Fraisse et al 2017 files (after starting with the lists of genes that made it into the three concatenations for PAML). 
+
+TollIMDJakSTAT_omegas_updated.xlsx:
+Contains data for pleiotropic and immune non-pleiotropic genes of interest from codeml site models M0, M7, and M8. Models 7 and 8 are compared using their log likelihood scores (lnLs) in the equation 2*(lnL8 - lnL7). The result of that equation is a test statistic approximated by a chi square distribution, so this file also contains a p-value from a chi square distribution (the built in function in Excel) with df = 2. For negative test statistics, the p-value is 1. M7 creates 10 classes of sites, each representing 10% of the sites in the alignment (in this case, codons), where each class is constrained at a dN/dS value (omega) less than 1. M8 creates 11 classes of sites where each class is of variable proportion and, like M7, has its own omega value. The 11th class of sites is constrained to have an omega value of at least 1. The comparison of M8 vs M7 tells us whether a model containing a class with dN/dS >= 1 is a significantly better fit to the data than a model with all dN/dS values < 1. 
 
 In concatenations/:
 
