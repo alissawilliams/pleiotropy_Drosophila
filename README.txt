@@ -2,6 +2,8 @@ Abbreviations:
 plei = pleiotropic genes
 nonplei/nonpleiotropic = non-pleiotropic immune genes
 devo/developmental = non-pleiotropic developmental genes
+pop = population (we used Raleigh (RAL) and Zambia (ZI) for MultiDFE analyses)
+SFS = site frequency spectra (also used in MultiDFE analyses)
 
 Note: each of the categories above is referred to as a gene class, gene category, class, or category. 
 
@@ -25,9 +27,9 @@ Contains model 0 output (model = 0, NSsites = 0), model 7 output (model = 0, NSs
 individual_genes_fulltable_codeml_model0.txt: 
 full table of codeml model 0 results for all individual genes. Made using the [category]_dnds_values.txt tables described above. 
 
-sequence_counts.xlsx:
+sequence_counts_v3.xlsx:
 The first tab shows the number of sequences we started with at the beginning (from Table 1, row 2 in the manuscript). The first sheet then provides data on how many genes remained in each group after removing genes with too few sequences (which happened after removing species with gene duplicates) and then removing genes whose sequence files didn't align. Finally, of those sequence files that aligned, a number is also shown to represent the number of those genes for which NSsites = 0 codeml runs were successful. The numbers under "Sequence files that aligned" represent the concatenations, while the numbers under "Number of genes where model 0 run was successful" represent genes used in the distributions of individual NSsites = 0 dN/dS values. 
-The second tab shows the number of genes found in the two relevant Fraisse et al 2017 files (after starting with the lists of genes that made it into the three concatenations for PAML). 
+The second tab shows the number of genes found in the provided dsimDmelSites.tab file for both populations of D. melanogaster, Raleigh (RAL) and Zambia (ZI). These genes were used in the MultiDFE analysis.
 
 TollIMDJakSTAT_omegas_updated.xlsx:
 Contains data for pleiotropic and immune non-pleiotropic genes of interest from codeml site models M0, M7, and M8. Models 7 and 8 are compared using their log likelihood scores (lnLs) in the equation 2*(lnL8 - lnL7). The result of that equation is a test statistic approximated by a chi square distribution, so this file also contains a p-value from a chi square distribution (the built in function in Excel) with df = 2. For negative test statistics, the p-value is 1. M7 creates 10 classes of sites, each representing 10% of the sites in the alignment (in this case, codons), where each class is constrained at a dN/dS value (omega) less than 1. M8 creates 11 classes of sites where each class is of variable proportion and, like M7, has its own omega value. The 11th class of sites is constrained to have an omega value of at least 1. The comparison of M8 vs M7 tells us whether a model containing a class with dN/dS >= 1 is a significantly better fit to the data than a model with all dN/dS values < 1. 
@@ -47,16 +49,19 @@ Then there are three folders: devo, nonplei, and plei. In each:
 - concat_[class]_genes_paml_noG.out: output of model 7 and model 8, which were performed using the same run (model = 0, NSsites = 7 8)
 - the devo concatenation was large enough that NSsites7 and NSsites8 are in separate output files (named with same convention as above)
 
-In McDonald-Kreitman/:
+In MultiDFE/:
 
-[class]_genes_mk_vals.txt:
-Modified version of File S5 from Fraisse et al, 2017 that includes only the genes that were included in that particular class's concatenation (note that not all genes in the concatenation were found in these tables; see below). 
+[pop]_bootstrap_replicates.zip: 
+All 100 bootstrap replicates for each gene category for that particular population plus lists of gene IDs used in each bootstrap replicate. Also contains intermediate files used to build the tables of SFS for each population.
 
-[class]_missing_genes_MK_table.txt:
-List of genes from particular class concatenation that were not found in File S5 from Fraisse et al, 2017. 
+[pop]_individual_gene_SFS.zip:
+The SFS files for all of the individual genes in each category for that particular population. SFS are found in the corresponding folder for the gene category (nonplei, plei, or devo). Also contains intermediate files and plots of individual gene alpha and omega_a values. 
 
-fullMKtable.txt:
-Full table of MK data from File S5 (Fraisse et al, 2017) for all genes of interest found in the concatenation and File S5. MAde using the [class]_genes_mk_table.txt table described above.
+dsimDmelSites.tab.zip:
+File provided by Jesus Murga-Moreno that we used to get raw counts of variants (rather than proportions of variants in frequency bins).  
+
+[pop]dsimDmelSites.txt.zip, [pop]dsimDmelSites_noDiv.txt.zip:
+Versions of dsimDmelSites.tab for each population. 
 
 In scripts/:
 
