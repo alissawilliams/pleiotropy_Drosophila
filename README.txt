@@ -89,6 +89,12 @@ gene_list.py:
 Script to extract relevant columns from table
 Uses a list of genes of interest and an ortholog table (from FlyBase) to create a version of the table only containing genes of interest.
 
+multidfe_output.py:
+Script to extract fixation probability from MultiDFE output. 
+
+multidfe_sum.R:
+Script to calculate alpha and omega_a from MultiDFE output and PopFlyData table. 
+
 num_seqs.py:
 Script to remove sequence files with <2 sequences
 Reads in fasta files and moves any files with fewer than 2 sequences to a different folder.
@@ -96,3 +102,20 @@ Reads in fasta files and moves any files with fewer than 2 sequences to a differ
 one_to_one.R:
 Script for determining copy number of genes
 Uses (modified) table of orthologs from FlyBase plus a list of genes of interest to determine which of those genes have one-to-one orthologs across all species of interest. File names are hardcoded. Could be modified for different files/formats.
+
+raw_counts.py:
+Script to get raw variant counts from dsimDmelSites.tab. 
+Based on code provided in Jupyter notebook at https://nbviewer.org/github/jmurga/iMKTData/blob/master/notebooks/dmelProteins.ipynb.
+
+summed_sfs.py:
+Script used to take individual gene SFS and make tables full of SFS and gene IDs in the same order. 
+
+summed_sfs_v2.R:
+Script to take SFS files for each gene in each class and sum them into a single SFS.
+Also does bootstrapping. 
+
+
+
+
+
+
