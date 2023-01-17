@@ -14,6 +14,9 @@ Contains three folders: seqfiles_developmental_genes_edited, seqfiles_nonpleiotr
 - trimmed contains the final sequence files used in concatenations and individual gene runs. Within trimmed is individual_trees, which contains the .nwk format trees used to run codeml for each individual gene. 
 - trimmed_originals contains the final sequence files (same as above) but with the original gene IDs instead of just species names like the ones above.
 
+CDS_sequences_6species.zip:
+Similar to above: contains three folders, one for each gene class: nonplei = non-pleiotropic immune genes, plei = pleiotropic genes, devo = non-pleiotropic developmental genes. These are the sequence files that were used for the melanogaster group (6 species) analysis. 
+
 codeml_output_individual_genes.zip:
 Contains model 0 output (model = 0, NSsites = 0) for each individual gene, i.e. where each gene is assigned one dN/dS value for the entire tree. The genes are separated into their categories in the folders devo_codeml_output, nonplei_codeml_output, and plei_codeml_output. In each of those respective folders, you'll find:
 - a bunch of files in the format aligned_edited_FBgnxxxxxxx.model0.site.result.txt. These are the codeml output files. 
