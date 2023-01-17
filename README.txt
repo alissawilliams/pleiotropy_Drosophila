@@ -37,6 +37,14 @@ The second tab shows the number of genes found in the provided dsimDmelSites.tab
 TollIMDJakSTAT_omegas_updated.xlsx:
 Contains data for pleiotropic and immune non-pleiotropic genes of interest from codeml site models M0, M7, and M8. Models 7 and 8 are compared using their log likelihood scores (lnLs) in the equation 2*(lnL8 - lnL7). The result of that equation is a test statistic approximated by a chi square distribution, so this file also contains a p-value from a chi square distribution (the built in function in Excel) with df = 2. For negative test statistics, the p-value is 1. M7 creates 10 classes of sites, each representing 10% of the sites in the alignment (in this case, codons), where each class is constrained at a dN/dS value (omega) less than 1. M8 creates 11 classes of sites where each class is of variable proportion and, like M7, has its own omega value. The 11th class of sites is constrained to have an omega value of at least 1. The comparison of M8 vs M7 tells us whether a model containing a class with dN/dS >= 1 is a significantly better fit to the data than a model with all dN/dS values < 1. 
 
+In 6species_dataset/:
+
+Results of performing the analyses on the 6 species dataset (melanogaster group) instead of the original set of 12 species. 
+
+concatenation_6species_results/: codeml output for all three models (M0, M7, and M8) for all three concatenations. Models M7 and M8 are in the same file for the pleiotropic class. 
+
+omega_results_single_genes/: the omega value calculated for each of the individual genes for the 6 species dataset using model M0. 
+
 In concatenations/:
 
 codeml_plei_model0.ctl and codeml_plei_models7and8.ctl: examples of control files used in PAML codeml for concatenations
